@@ -1,0 +1,15 @@
+class del_not_using_data:
+    def del_columns(students):
+        del students['address']
+        del students['famsize']
+        del students['Pstatus']
+        del students['Medu']
+        del students['Fedu']
+        del students['Mjob']
+        del students['Fjob']
+        del students['reason']
+        del students['guardian']
+        del students['school']
+        del students['sex']
+        del students['famrel']
+        return students
