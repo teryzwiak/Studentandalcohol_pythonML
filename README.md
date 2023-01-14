@@ -12,7 +12,7 @@ Data set, który przyjęliśmy na początku zawierał nieistotne dane, które us
 - do której szkoły chodzi (GP lub MS, skrót nazwy)
 - relacje z rodziną
 
-Naszym celem było obliczenie tylko egzaminu końcowego (kolumna G3), ale macierz korelacji pokazała nam, że wyniki na koniec pierwszego i drugiego semestru (odpowiednio G1 i G2) są bardzo determinujące czy ostatni egzamin również się powiedzie. Pomysł na to, aby nie usuwać tych kolumn oparliśmy na teście jaki wykonaliśmy, czyli usunięciu ich. Model drastycznie się mylił co do oceny jaką student dostał.
+Naszym celem było oszacowanie tylko egzaminu końcowego (kolumna G3), ale macierz korelacji pokazała nam, że wyniki na koniec pierwszego i drugiego semestru (odpowiednio G1 i G2) są bardzo determinujące czy ostatni egzamin również się powiedzie. Pomysł na to, aby nie usuwać tych kolumn oparliśmy na teście jaki wykonaliśmy, czyli usunięciu ich. Model drastycznie się mylił co do oceny jaką student dostał.
 
 Trenowanie modelu wykazało, że najlepszym modelem był Random Forest Regressor, który uzyskał accuracy mierzone metodą MAE na poziomie 79,83%. Testy manualne wskazały, że w jego przypadku jest to wystarczające - dla pilnego ucznia, który uzyskał prawie maksymalne oceny ze wszystkich egzaminów (odpowiednio 19, 19 i 20), regresor wykazał wynik na poziomie 19 punktów, gdzie uczeń uzyskał faktycznie 20.
 
