@@ -1,4 +1,5 @@
-Nasz model miał na celu ocenę wpływu codziennych nawyków na szanse zdania egzaminu końcowego. 
+# student_and_alcohol_regression
+Model miał na celu ocenę wpływu codziennych nawyków (w tym spożycia alkoholu) na szanse zdania egzaminu końcowego. 
 
 Data set, który przyjęliśmy na początku zawierał nieistotne dane, które usunęliśmy:
 - miejsce zamieszkania (miasto lub przedmieścia/wieś)
