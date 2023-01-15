@@ -1,3 +1,4 @@
+import pickle
 class ankieta: 
     def gen_ankieta():
         print("Oceń swoje możliwości zdania roku")
@@ -20,15 +21,18 @@ class ankieta:
         walc = int(input("Podaj ile alkoholu spożywasz tygodniowo(1/5): "))
         health = int(input("Podaj jakość zdrowia(1/5): "))
         absences = int(input("Podaj ilość nieobecności(0/51): "))
-
+        g1 = int(input("Podaj wynik 1 roku: "))
+        g2 = int(input("Podaj wynik 2 roku: "))
+        wynik=0
         if absences > 51:
             wynik = 0
-        return wynik
-ankieta.gen_ankieta()
-with open('alcholic_regressor_model.pickle', 'rb') as handle:
-    clf = pickle.load(handle)
 
-wynik = clf.predict([[age, traveltime, studytime, failures, schoolsup, famsup, paid, activities, nursery, higher, internet, romantic, freetime, gout, dalc, walc, health, absences]])
-#wynik =* 5  
-print("Twój wynik:")
-print(wynik)
+        with open('alcholic_regressor_model.pickle', 'rb') as handle:
+            clf = pickle.load(handle)
+
+        wynik = clf.predict([[age, traveltime, studytime, failures, schoolsup, famsup, paid, activities, nursery, higher, internet, romantic, freetime, gout, dalc, walc, health, absences, g1, g2]])
+        #wynik =* 5  
+       
+        return wynik
+
+print(ankieta.gen_ankieta())
