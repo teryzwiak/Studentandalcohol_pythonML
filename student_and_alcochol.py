@@ -77,6 +77,9 @@ accuracy = train_model(regressor, X_train, y_train, X_test)
 accuracy_compare['random forrest tree'] = accuracy
 print ('random forrest tree' , accuracy)
 
+df_compare = pd.DataFrame(accuracy_compare, index = ['mse', 'mae'])
+df_compare.plot(kind='bar')
+
 regressor.predict([[18,2,2,0,1,0,0,0,1,1,0,0,3,4,1,1,3,6, 15, 16]]) #prawidłowa wartość 15
 
 import pickle
