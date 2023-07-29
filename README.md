@@ -1,19 +1,18 @@
-# student_and_alcohol_regression
-Model miał na celu ocenę wpływu codziennych nawyków (w tym spożycia alkoholu) na szanse zdania egzaminu końcowego. 
+he model aimed to assess the impact of daily habits (including alcohol consumption) on the chances of passing the final exam.
 
-Data set, który przyjęliśmy na początku zawierał nieistotne dane, które usunęliśmy:
-- miejsce zamieszkania (miasto lub przedmieścia/wieś)
-- wielkość rodziny (mniejsza lub równa 3; większa niż 3) 
-- status związku rodziców (żyjący razem lub osobno)
-- wykształcenie rodziców (rozbite na kolumny per rodzic)
-- pracę rodziców (j.w.)
-- powód wyboru danej szkoły (dobra lokalizacja, prestiż, jakość kształcenia lub inne)
-- kto jest prawnym opiekunem ucznia (matka lub ojciec)
-- do której szkoły chodzi (GP lub MS, skrót nazwy)
-- relacje z rodziną
+The initial dataset we adopted contained irrelevant data, which we removed:
 
-Naszym celem było oszacowanie tylko egzaminu końcowego (kolumna G3), ale macierz korelacji pokazała nam, że wyniki na koniec pierwszego i drugiego semestru (odpowiednio G1 i G2) są bardzo determinujące czy ostatni egzamin również się powiedzie. Pomysł na to, aby nie usuwać tych kolumn oparliśmy na teście jaki wykonaliśmy, czyli usunięciu ich. Model drastycznie się mylił co do oceny jaką student dostał.
+Place of residence (city, suburb/village)
+Family size (smaller or equal to 3; larger than 3)
+Parental relationship status (living together or separated)
+Parents' education (divided into columns per parent)
+Parents' occupation (same as above)
+Reason for choosing the school (good location, prestige, quality of education, or others)
+Legal guardian of the student (mother or father)
+School attended (GP or MS, abbreviation of the name)
+Family relationships
+Our goal was to estimate only the final exam (column G3), but the correlation matrix showed that the results at the end of the first and second semesters (G1 and G2, respectively) strongly influence the final exam outcome. Based on the test we conducted by removing these columns, the model made significant errors in predicting students' grades.
 
-Trenowanie modelu wykazało, że najlepszym modelem był Random Forest Regressor, który uzyskał accuracy mierzone metodą MAE na poziomie 79,83%. Testy manualne wskazały, że w jego przypadku jest to wystarczające - dla pilnego ucznia, który uzyskał prawie maksymalne oceny ze wszystkich egzaminów (odpowiednio 19, 19 i 20), regresor wykazał wynik na poziomie 19 punktów, gdzie uczeń uzyskał faktycznie 20.
+During model training, we found that the best-performing model was the Random Forest Regressor, which achieved an accuracy measured by the MAE method at the level of 79.83%. Manual tests indicated that this accuracy level is sufficient - for a diligent student who obtained nearly perfect scores in all exams (19, 19, and 20, respectively), the regressor predicted a score of 19 points, while the student actually received 20.
 
-Poprawa modelu poprzez zwiększenie domyślnej ilości budowanych drzew (100 drzew) do 200 przy trenowaniu modelu, wykazało poprawę o 0,1 punktu procentowego. Jest to maksymalna wartość jaką udało nam się uzyskać.
+Improving the model by increasing the default number of built trees (from 100 to 200) during training resulted in a 0.1 percentage point improvement. This was the maximum value we were able to achieve.
