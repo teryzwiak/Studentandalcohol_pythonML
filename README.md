@@ -1,4 +1,4 @@
-he model aimed to assess the impact of daily habits (including alcohol consumption) on the chances of passing the final exam.
+The model aimed to assess the impact of daily habits (including alcohol consumption) on the chances of passing the final exam.
 
 The initial dataset we adopted contained irrelevant data, which we removed:
 
